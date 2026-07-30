@@ -37,7 +37,7 @@ const viteConfig = {
 export default defineConfig({
   // Astro outputs ordinary static files that GitHub Pages can host.
   compressHTML: true,
-  site: 'https://disabilitylawyerillinois.com',
+  site: 'https://intern-ws.github.io',
   output: 'static',
   integrations: [
     compress(),
