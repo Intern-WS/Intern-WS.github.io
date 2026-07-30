@@ -1,0 +1,11 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+<DefaultLayout title="Accessibility Statement">
+  <!-- The promise of clear, usable content is stated before implementation details. -->
+  <PageHeader title="Accessibility statement" subtitle="Williams &amp; Swee, Ltd. wants this website to be clear and usable for people with disabilities." bgType="bordered" />
+  <!-- Visitors receive both an alternate contact method and a testing commitment. -->
+  <section class="section"><div class="narrow space-content container"><Heading level="h2">Our approach</Heading><p>This demo uses large readable text, strong contrast, keyboard-friendly controls, clear headings, simple navigation, reduced motion, and plain language.</p><Heading level="h2">Need help another way?</Heading><p>If part of the site is hard to use, call the firm at <Link href="tel:+10000000000">(000) 000-0000</Link>. Tell us what page you were using and what help you need.</p><Heading level="h2">Ongoing review</Heading><p>Before launch, the firm should test the site with keyboard users, screen readers, zoom, automated tools, and people with cognitive or intellectual disabilities.</p></div></section>
+</DefaultLayout>

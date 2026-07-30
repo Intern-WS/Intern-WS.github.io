@@ -1,0 +1,23 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import ContactForm from '@components/ContactForm.astro'
+import { Heading } from 'accessible-astro-components'
+const attorneys = ['Attorney One','Attorney Two','Attorney Three','Attorney Four','Attorney Five']
+---
+<DefaultLayout title="About the Firm" description="Learn about Williams & Swee, Ltd. and the attorneys who help Illinois residents with SSI and SSDI matters.">
+  <!-- Firm introduction: makes site ownership and the demo status unambiguous. -->
+  <PageHeader title="About Williams & Swee, Ltd." subtitle="DisabilityLawyerIllinois is a website of Williams &amp; Swee, Ltd." bgType="bordered" />
+  <section class="section"><div class="container content-grid">
+    <div class="space-content"><Heading level="h2">A law firm focused on clear guidance</Heading><p>Williams &amp; Swee, Ltd. helps people in Illinois understand Social Security disability applications and appeals.</p><p>This demo uses placeholder details. Replace this section with the firm’s verified history, office information, service area, accommodations, and languages.</p></div>
+    <aside class="help-card"><Heading level="h2" size="h4">Firm details</Heading><p><strong>Williams &amp; Swee, Ltd.</strong></p><p>Illinois office address<br />City, Illinois 00000</p><p>(000) 000-0000</p></aside>
+  </div></section>
+  <!-- Attorney grid: five clearly marked placeholders await verified biographies and photos. -->
+  <section class="section section-alt" aria-labelledby="attorneys-heading"><div class="container space-content">
+    <p class="eyebrow">Meet the legal team</p><Heading level="h2" id="attorneys-heading">Our attorneys</Heading>
+    <p>Replace each placeholder with a reviewed biography, accurate credentials, and an accessible professional photograph.</p>
+    <div class="attorney-grid">{attorneys.map((name, index) => <article class="attorney-card"><div class="attorney-placeholder" aria-hidden="true">Photo {index + 1}</div><div><Heading level="h3" size="h5">{name}</Heading><p>Attorney biography placeholder. Add practice background, education, and approach.</p></div></article>)}</div>
+  </div></section>
+  <!-- Contact option remains available after visitors review the firm. -->
+  <div class="container section"><ContactForm compact /></div>
+</DefaultLayout>

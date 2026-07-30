@@ -1,0 +1,43 @@
+---
+import { Form, Input, Button, Textarea, Heading } from 'accessible-astro-components'
+
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props
+---
+
+<!--
+  Shared demo form: visible labels and autocomplete attributes help keyboard,
+  screen-reader, and cognitive-accessibility users. The button intentionally
+  has type="button" until an approved backend is connected.
+-->
+<section class:list={['contact-panel', compact && 'contact-panel--compact']} aria-labelledby={`contact-heading-${compact ? 'compact' : 'full'}`}>
+  <!-- Introductory copy explains what the form does before asking for information. -->
+  <div class="contact-copy">
+    <p class="eyebrow">Talk with the firm</p>
+    <Heading level="h2" id={`contact-heading-${compact ? 'compact' : 'full'}`}>Tell us how we can help</Heading>
+    <p>Share a few basic details. A staff member can contact you about possible next steps.</p>
+    <p class="form-note"><strong>Demo form:</strong> This form does not send information yet.</p>
+  </div>
+  <!-- Only basic contact details are requested; sensitive records are explicitly excluded. -->
+  <Form name="contact" action="/thank-you" method="post">
+    <div class="form-grid">
+      <Input name="name" label="Your name" required autocomplete="name" />
+      <Input name="phone" label="Phone number" type="tel" required autocomplete="tel" />
+      <Input name="email" label="Email address (optional)" type="email" autocomplete="email" />
+      <label class="field-label">
+        <span>Where are you in the process?</span>
+        <select name="stage">
+          <option value="">Choose one</option>
+          <option>I need to apply</option>
+          <option>My claim was denied</option>
+          <option>I have a hearing</option>
+          <option>I am not sure</option>
+        </select>
+      </label>
+    </div>
+    <Textarea name="message" label="Short message (optional)" />
+    <p class="privacy-note">Do not send a Social Security number, medical records, or other sensitive information. Sending this form does not create an attorney-client relationship.</p>
+    <!-- Change htmlType to "submit" only after the production form endpoint is ready. -->
+    <Button htmlType="button" type="primary">Ask the firm to contact me</Button>
+  </Form>
+</section>

@@ -1,0 +1,11 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Heading } from 'accessible-astro-components'
+---
+<DefaultLayout title="Privacy Notice">
+  <!-- Draft status is placed first so visitors do not mistake this for the final policy. -->
+  <PageHeader title="Privacy notice" subtitle="This page is a draft for review before the website collects real information." bgType="bordered" />
+  <!-- Short sections explain the demo form, sensitive data, and production review. -->
+  <section class="section"><div class="narrow space-content container"><Heading level="h2">Demo form</Heading><p>The contact forms in this demo do not send or store information. A production privacy notice should explain what the firm collects, why it collects it, who receives it, and how long it is kept.</p><Heading level="h2">Do not send sensitive information</Heading><p>Do not send Social Security numbers, medical records, birth dates, financial account details, or other confidential information through an unapproved form.</p><Heading level="h2">Before launch</Heading><p>The firm should review form hosting, email delivery, security, cookies, analytics, retention, and required notices.</p></div></section>
+</DefaultLayout>

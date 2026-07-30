@@ -1,0 +1,23 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Link, Notification } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+---
+
+<DefaultLayout title="Thank you">
+  <!-- This placeholder route is ready for the future working form backend. -->
+  <PageHeader title="Thank you" subtitle="This confirmation page is part of the demo." bgType="bordered" />
+  <section class="container my-16">
+    <div class="space-content">
+      <Notification type="info">
+        <Icon aria-hidden="true" name="lucide:info" size={24} />
+        <p>The demo form does not send information yet. Add a confirmed response time and next steps when the form backend is connected.</p>
+      </Notification>
+      <!-- A plain return action prevents visitors from reaching a dead end. -->
+      <Link href="/contact" isButton type="primary">
+        Back to contact
+      </Link>
+    </div>
+  </section>
+</DefaultLayout>

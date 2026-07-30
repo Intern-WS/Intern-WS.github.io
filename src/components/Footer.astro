@@ -1,0 +1,33 @@
+---
+import { Heading, Link } from 'accessible-astro-components'
+const currentYear = new Date().getFullYear()
+---
+<footer>
+  <!-- Primary footer: repeats ownership, service links, and policy links on every page. -->
+  <section class="py-16">
+    <div class="container grid grid-cols-1 gap-10 lg:grid-cols-3">
+      <div class="space-content">
+        <Heading level="h2" size="h4">DisabilityLawyerIllinois</Heading>
+        <p>A website of <strong>Williams &amp; Swee, Ltd.</strong></p>
+        <p>Helping Illinois residents understand SSI, SSDI, denied claims, hearings, and appeals.</p>
+      </div>
+      <div>
+        <Heading level="h2" size="h6" class="mb-4">Get help</Heading>
+        <ul class="flex flex-col gap-2">
+          <li><Link href="/ssi">SSI benefits</Link></li><li><Link href="/ssdi">SSDI benefits</Link></li>
+          <li><Link href="/disability-appeals">Denied benefits</Link></li><li><Link href="/how-we-help">How we help</Link></li>
+          <li><Link href="/contact">Contact the firm</Link></li>
+        </ul>
+      </div>
+      <div>
+        <Heading level="h2" size="h6" class="mb-4">Firm and policies</Heading>
+        <ul class="flex flex-col gap-2">
+          <li><Link href="/about">About Williams &amp; Swee</Link></li><li><Link href="/accessibility">Accessibility</Link></li>
+          <li><Link href="/privacy">Privacy</Link></li><li><Link href="/legal-disclaimer">Legal disclaimer</Link></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- Legal footer: shows the current year and reminds editors that demo copy needs review. -->
+  <section class="py-8"><div class="container"><p>&copy; {currentYear} Williams &amp; Swee, Ltd. Demo content must be reviewed by the firm before publication.</p></div></section>
+</footer>

@@ -1,0 +1,11 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Heading } from 'accessible-astro-components'
+---
+<DefaultLayout title="Legal Disclaimer">
+  <!-- The header summarizes the page before the detailed limitations. -->
+  <PageHeader title="Legal disclaimer" subtitle="General information about this website and contacting the firm." bgType="bordered" />
+  <!-- Each limitation receives its own plain-language heading. -->
+  <section class="section"><div class="narrow space-content container"><Heading level="h2">General information only</Heading><p>This website provides general information. It is not legal advice for a specific person or situation.</p><Heading level="h2">No attorney-client relationship</Heading><p>Viewing this website or sending a message does not create an attorney-client relationship. Representation begins only after the firm completes its review and both sides agree in writing.</p><Heading level="h2">No promises</Heading><p>Past outcomes do not guarantee a future result. Every matter depends on its own facts and the law.</p><p><strong>Draft notice:</strong> Illinois counsel should review this page and all advertising language before launch.</p></div></section>
+</DefaultLayout>

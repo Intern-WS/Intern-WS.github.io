@@ -1,0 +1,49 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import ContactForm from '@components/ContactForm.astro'
+import { Heading, Link } from 'accessible-astro-components'
+
+interface Props {
+  title: string
+  description: string
+  intro: string
+  points: string[]
+  steps: string[]
+  reviewed?: string
+}
+const { title, description, intro, points, steps, reviewed = 'July 2026' } = Astro.props
+---
+
+<DefaultLayout title={title} description={description}>
+  <!-- Page header: provides orientation, breadcrumbs, and one plain-language summary. -->
+  <PageHeader title={title} subtitle={intro} bgType="bordered" />
+
+  <!-- Main guidance: facts and next steps stay in a predictable reading order. -->
+  <section class="section">
+    <div class="container content-grid">
+      <article class="space-content">
+        <p class="reviewed">General information · Last reviewed {reviewed}</p>
+        <Heading level="h2">What this may mean for you</Heading>
+        <ul class="check-list">
+          {points.map((point) => <li>{point}</li>)}
+        </ul>
+        <Heading level="h2">What you can do next</Heading>
+        <ol class="step-list">
+          {steps.map((step, index) => <li><span>{index + 1}</span><p>{step}</p></li>)}
+        </ol>
+        <p>The rules and deadlines depend on your situation. <Link href="/contact">Contact Williams &amp; Swee, Ltd.</Link> for help understanding possible next steps.</p>
+      </article>
+      <!-- Call card: offers help without interrupting the main explanation. -->
+      <aside class="help-card" aria-labelledby="help-card-title">
+        <Heading level="h2" size="h4" id="help-card-title">Not sure where to start?</Heading>
+        <p>You do not need to know the right legal term before you call.</p>
+        <a class="call-link" href="tel:+10000000000">Call (000) 000-0000</a>
+        <p class="small">Placeholder phone number for this demo.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Compact contact form: repeats the primary action near the end of each service page. -->
+  <div class="container section"><ContactForm compact /></div>
+</DefaultLayout>

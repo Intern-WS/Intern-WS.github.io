@@ -1,0 +1,17 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import ContactForm from '@components/ContactForm.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+<DefaultLayout title="Contact the Firm" description="Contact Williams & Swee, Ltd. about an Illinois SSI or SSDI application, denial, appeal, or hearing.">
+  <!-- Contact header reassures visitors that legal vocabulary is not required. -->
+  <PageHeader title="Contact Williams & Swee, Ltd." subtitle="Call the firm or send a short message. You do not need to know the right legal term." bgType="bordered" />
+  <!-- Direct contact details provide an alternative to the form. -->
+  <section class="section"><div class="container content-grid">
+    <div class="space-content"><Heading level="h2">Call the firm</Heading><p><Link href="tel:+10000000000">(000) 000-0000</Link></p><p>Monday through Friday<br />8:30 a.m. to 5:00 p.m.</p><p class="small">Phone number, hours, email, and office address are placeholders for the demo.</p></div>
+    <div class="space-content"><Heading level="h2">Office</Heading><p>Williams &amp; Swee, Ltd.<br />Street address<br />City, Illinois 00000</p><p>Ask the firm about remote meetings or disability accommodations.</p></div>
+  </div></section>
+  <!-- Shared demo form will be connected to an approved backend later. -->
+  <div class="container section"><ContactForm /></div>
+</DefaultLayout>

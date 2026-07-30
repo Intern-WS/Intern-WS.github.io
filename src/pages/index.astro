@@ -1,0 +1,100 @@
+---
+// Shared building blocks keep headings, links, forms, and SEO consistent.
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import ContactForm from '@components/ContactForm.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<DefaultLayout
+  title="Illinois SSI and SSDI Lawyers | Williams & Swee, Ltd."
+  useTitleTemplate={false}
+  description="Clear, plain-language help for Illinois SSI and SSDI applications, denied claims, hearings, and appeals from Williams & Swee, Ltd."
+>
+  <!-- Hero: immediately identifies the service, firm, and two clearest actions. -->
+  <section class="guided-hero">
+    <div class="container guided-hero__grid">
+      <div class="space-content">
+        <p class="eyebrow">Social Security disability help in Illinois</p>
+        <Heading level="h1">Clear help with SSI and SSDI</Heading>
+        <p class="hero-lede">Williams &amp; Swee, Ltd. helps people apply for disability benefits and appeal denied claims.</p>
+        <div class="button-row">
+          <Link href="tel:+10000000000" isButton type="primary">Call Williams &amp; Swee</Link>
+          <Link href="/disability-appeals" isButton type="secondary">My claim was denied</Link>
+        </div>
+        <p class="small">Demo phone number: (000) 000-0000</p>
+      </div>
+
+      <!-- The assurance card reduces pressure for visitors unfamiliar with legal terms. -->
+      <aside class="guided-card guided-card--hero space-content" aria-labelledby="start-title">
+        <p class="eyebrow">A simple place to start</p>
+        <Heading level="h2" size="h3" id="start-title">You can start with one call</Heading>
+        <p>You do not need to understand every Social Security rule first.</p>
+        <p><strong>Tell us what happened. We will listen and explain possible next steps.</strong></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Process: three short steps make the first contact feel predictable. -->
+  <section class="guided-process" aria-labelledby="next-heading">
+    <div class="container">
+      <Heading level="h2" size="h3" id="next-heading">What happens next</Heading>
+      <ol class="guided-process__list">
+        <li><span aria-hidden="true">1</span><strong>Call or message us</strong></li>
+        <li><span aria-hidden="true">2</span><strong>Tell us what happened</strong></li>
+        <li><span aria-hidden="true">3</span><strong>Learn a possible next step</strong></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Help choices: visitors can choose by situation instead of legal vocabulary. -->
+  <section class="section section-soft" aria-labelledby="help-heading">
+    <div class="container space-content">
+      <p class="eyebrow">Choose what sounds like you</p>
+      <Heading level="h2" id="help-heading">How can we help?</Heading>
+      <div class="card-grid">
+        <article class="guided-card choice-card space-content">
+          <span class="card-number" aria-hidden="true">01</span>
+          <Heading level="h3" size="h4">I need to apply</Heading>
+          <p>Learn about SSI and SSDI and what information may help your application.</p>
+          <Link href="/how-we-help">Help with an application</Link>
+        </article>
+        <article class="guided-card choice-card space-content">
+          <span class="card-number" aria-hidden="true">02</span>
+          <Heading level="h3" size="h4">My claim was denied</Heading>
+          <p>A denial is not always the end. You may be able to ask Social Security to review the decision.</p>
+          <Link href="/disability-appeals">Learn about appeals</Link>
+        </article>
+        <article class="guided-card choice-card space-content">
+          <span class="card-number" aria-hidden="true">03</span>
+          <Heading level="h3" size="h4">I have a hearing</Heading>
+          <p>Learn how an attorney may help you prepare for a disability hearing.</p>
+          <Link href="/how-we-help">Help before a hearing</Link>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program comparison: explains the main distinction without overwhelming detail. -->
+  <section class="section" aria-labelledby="compare-heading">
+    <div class="container space-content">
+      <p class="eyebrow">Two disability programs</p>
+      <Heading level="h2" id="compare-heading">SSI and SSDI are different</Heading>
+      <div class="comparison">
+        <article class="program-card space-content">
+          <Heading level="h3">SSDI</Heading>
+          <p>Social Security Disability Insurance is usually based on your work history.</p>
+          <Link href="/ssdi">Learn about SSDI</Link>
+        </article>
+        <article class="program-card space-content">
+          <Heading level="h3">SSI</Heading>
+          <p>Supplemental Security Income is usually based on limited income and resources.</p>
+          <Link href="/ssi">Learn about SSI</Link>
+        </article>
+      </div>
+      <p><strong>Both programs use Social Security’s disability rules.</strong> The rules can be complicated. We can help you understand which program may apply.</p>
+    </div>
+  </section>
+
+  <!-- Contact: repeated here so help is available without another navigation step. -->
+  <div class="container section"><ContactForm /></div>
+</DefaultLayout>

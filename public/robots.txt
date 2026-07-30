@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://disabilitylawyerillinois.com/sitemap-index.xml
