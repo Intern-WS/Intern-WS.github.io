@@ -1,0 +1,50 @@
+---
+import ResourcePage from '@components/ResourcePage.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<ResourcePage
+  title="Evidence and Documents for a Disability Claim"
+  description="Learn what medical, work, and daily-life information may help Social Security understand an SSI or SSDI disability claim."
+  intro="Evidence helps Social Security understand your health conditions and how they affect your ability to function."
+  related={[
+    { href: '/applying-for-disability', label: 'Learn how to apply for benefits' },
+    { href: '/disability-hearings', label: 'Prepare for a disability hearing' },
+    { href: '/disability-glossary', label: 'Look up unfamiliar terms' },
+  ]}
+>
+  <!-- Evidence groups: familiar categories reduce the burden of a long checklist. -->
+  <Heading level="h2">Medical information</Heading>
+  <ul class="check-list">
+    <li>Names and contact information for doctors, therapists, clinics, and hospitals.</li>
+    <li>Dates of visits, tests, hospital stays, and treatment.</li>
+    <li>Names and effects of medicines.</li>
+    <li>Medical records, reports, and recent test results that you already have.</li>
+  </ul>
+
+  <Heading level="h2">Work and school information</Heading>
+  <ul class="check-list">
+    <li>Job titles, dates, duties, hours, and physical or mental demands.</li>
+    <li>Education, training, and special-education services when relevant.</li>
+    <li>Changes at work, missed days, or help you needed because of a condition.</li>
+  </ul>
+
+  <Heading level="h2">Daily-life information</Heading>
+  <p>
+    Explain what you can do, what is difficult, how long tasks take, and what help you need. Be specific. Avoid guessing
+    or making symptoms sound better or worse than they are.
+  </p>
+
+  <div class="important-note">
+    <Heading level="h2" size="h4">Protect private information</Heading>
+    <p>
+      Do not send Social Security numbers, medical records, or highly sensitive information through this demo website.
+      Ask the firm how to share private records safely.
+    </p>
+  </div>
+  <p>
+    <Link href="https://www.ssa.gov/disability/professionals/bluebook/evidentiary.htm" isExternal
+      >Read Social Security’s evidence overview</Link
+    >.
+  </p>
+</ResourcePage>

@@ -1,0 +1,54 @@
+---
+import ResourcePage from '@components/ResourcePage.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<ResourcePage
+  title="Social Security Disability Lawyer Fees"
+  description="Learn in plain language how representative fees and case expenses may work in an SSI or SSDI claim."
+  intro="Ask for a written explanation of attorney fees and case expenses before you agree to representation."
+  related={[
+    { href: '/how-we-help', label: 'Learn how the firm may help' },
+    { href: '/frequently-asked-questions', label: 'Read common disability questions' },
+    { href: '/contact', label: 'Contact Williams & Swee, Ltd.' },
+  ]}
+>
+  <!-- Fee basics: avoids promising a specific arrangement before firm review. -->
+  <Heading level="h2">How fees often work</Heading>
+  <p>
+    Social Security must authorize most fees charged by a representative for work before the agency. One common method
+    is a written fee agreement tied to past-due benefits.
+  </p>
+  <p>
+    The rules include a percentage limit and a dollar cap. The cap can change. The agreement and facts of the case
+    matter, so ask the firm for its current terms.
+  </p>
+
+  <Heading level="h2">Fees and expenses are different</Heading>
+  <p>
+    An attorney fee pays for legal work. Case expenses may include costs for records, reports, postage, or other items.
+    Ask whether you may owe expenses even if benefits are not awarded.
+  </p>
+
+  <Heading level="h2">Questions to ask</Heading>
+  <ul class="check-list">
+    <li>How will the fee be calculated?</li>
+    <li>Does Social Security need to approve the fee?</li>
+    <li>What case expenses might I have to pay?</li>
+    <li>Could the fee process change if my case goes beyond a hearing?</li>
+    <li>When would any fee or expense be due?</li>
+  </ul>
+
+  <div class="important-note">
+    <Heading level="h2" size="h4">Draft fee language</Heading>
+    <p>
+      Williams &amp; Swee, Ltd. must replace this section with its actual, attorney-approved fee and expense terms
+      before publication.
+    </p>
+  </div>
+  <p>
+    <Link href="https://www.ssa.gov/representation/fee_agreements.htm" isExternal
+      >Read Social Security’s fee-agreement information</Link
+    >.
+  </p>
+</ResourcePage>

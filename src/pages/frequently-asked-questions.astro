@@ -1,0 +1,80 @@
+---
+import ResourcePage from '@components/ResourcePage.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<ResourcePage
+  title="Social Security Disability Frequently Asked Questions"
+  description="Find short answers to common questions about SSI, SSDI, disability applications, denials, hearings, evidence, and legal help."
+  intro="Start with the question that sounds most like yours. These answers are general and may not fit every case."
+  related={[
+    { href: '/ssi-vs-ssdi', label: 'Compare SSI and SSDI' },
+    { href: '/disability-appeals', label: 'Learn about denied claims' },
+    { href: '/disability-glossary', label: 'Look up disability terms' },
+  ]}
+>
+  <!-- FAQ list: native details controls work with keyboards and assistive technology. -->
+  <Heading level="h2">Common questions</Heading>
+  <div class="faq-list">
+    <details>
+      <summary>What is the difference between SSI and SSDI?</summary>
+      <p>
+        SSDI is generally connected to your covered work history. SSI is generally connected to limited income and
+        resources. Both use Social Security’s disability rules. <Link href="/ssi-vs-ssdi">See the full comparison</Link
+        >.
+      </p>
+    </details>
+    <details>
+      <summary>Can I apply for both programs?</summary>
+      <p>
+        Some people may apply for or receive benefits under both programs. Social Security reviews the rules and your
+        facts.
+      </p>
+    </details>
+    <details>
+      <summary>How do I start an application?</summary>
+      <p>
+        Depending on the program, you may start online, by telephone, or with help from a Social Security office. <Link
+          href="/applying-for-disability">Read the application guide</Link
+        >.
+      </p>
+    </details>
+    <details>
+      <summary>What if Social Security denied my claim?</summary>
+      <p>
+        You may be able to appeal. Read the notice promptly because deadlines apply. <Link href="/disability-appeals"
+          >Learn about an appeal</Link
+        >.
+      </p>
+    </details>
+    <details>
+      <summary>Should I file a new application after a denial?</summary>
+      <p>
+        Do not assume a new application is the right next step. Learn how a new filing could affect an available appeal
+        before you act.
+      </p>
+    </details>
+    <details>
+      <summary>What happens at a disability hearing?</summary>
+      <p>
+        A judge may ask about your medical conditions, work, treatment, and daily activities. Other witnesses may also
+        speak. <Link href="/disability-hearings">Read the hearing guide</Link>.
+      </p>
+    </details>
+    <details>
+      <summary>What records may help?</summary>
+      <p>
+        Social Security may need medical, work, and daily-life information. Keep notices and a list of your providers. <Link
+          href="/disability-claim-evidence">Review evidence and documents</Link
+        >.
+      </p>
+    </details>
+    <details>
+      <summary>Does sending the contact form make the firm my lawyer?</summary>
+      <p>
+        No. Sending the demo form does not create an attorney-client relationship. The firm must review the matter and
+        agree to represent you.
+      </p>
+    </details>
+  </div>
+</ResourcePage>

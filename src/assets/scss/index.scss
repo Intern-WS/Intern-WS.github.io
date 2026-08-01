@@ -25,72 +25,106 @@
 }
 
 // Global type and page colors establish a calm, readable baseline.
-body { color: var(--ink); background: var(--paper); }
-h1, h2, h3 { color: var(--navy-dark); letter-spacing: -.018em; }
-a { text-underline-offset: .2em; }
-.small, .reviewed, .privacy-note { color: var(--muted); font-size: .95rem; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+h1,
+h2,
+h3 {
+  color: var(--navy-dark);
+  letter-spacing: -0.018em;
+}
+a {
+  text-underline-offset: 0.2em;
+}
+.small,
+.reviewed,
+.privacy-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
 .eyebrow {
   color: #79500c;
-  font-size: .9rem;
   font-weight: 850;
-  letter-spacing: .09em;
+  font-size: 0.9rem;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
 // Navigation repeats the rounded guided-card language without crowding the menu.
 #main-navigation {
-  padding-block: 1rem !important;
-  background: #fff;
   border-bottom: 2px solid var(--blue-border);
+  background: #fff;
+  padding-block: 1rem !important;
 }
-#main-navigation .container { max-width: 90rem; }
-.menu { gap: .25rem !important; }
+#main-navigation .container {
+  max-width: 90rem;
+}
+.menu {
+  gap: 0.25rem !important;
+}
 .menu a {
   border-radius: 999px;
-  padding: .65rem .8rem !important;
-  font-size: 1rem;
+  padding: 0.65rem 0.8rem !important;
   font-weight: 700;
+  font-size: 1rem;
   text-decoration: none !important;
 }
-.menu a.is-active { color: var(--navy-dark); background: var(--blue-soft); }
+.menu a.is-active {
+  background: var(--blue-soft);
+  color: var(--navy-dark);
+}
 
 // Homepage hero: text remains dominant while the reassurance card supplies a clear secondary focus.
 .guided-hero {
-  padding-block: clamp(4rem, 9vw, 8rem);
   background: linear-gradient(145deg, var(--blue-soft) 0 58%, #fff 58%);
+  padding-block: clamp(4rem, 9vw, 8rem);
 }
 .guided-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(17rem, .75fr);
-  gap: clamp(2rem, 7vw, 7rem);
+  grid-template-columns: minmax(0, 1.25fr) minmax(17rem, 0.75fr);
   align-items: center;
+  gap: clamp(2rem, 7vw, 7rem);
 }
 .guided-hero h1 {
   max-width: 11ch;
   font-size: clamp(3rem, 7vw, 6.5rem);
-  line-height: .96;
+  line-height: 0.96;
 }
-.hero-lede { max-width: 48ch; font-size: clamp(1.2rem, 2vw, 1.55rem); }
-.button-row { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.75rem; }
+.hero-lede {
+  max-width: 48ch;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
 
 // Shared guided cards use visible boundaries, large radii, and a non-essential shadow.
 .guided-card {
-  padding: clamp(1.4rem, 3vw, 2rem);
-  background: #fff;
+  box-shadow: 0 6px 0 var(--shadow);
   border: 2px solid var(--blue-border);
   border-radius: 1rem;
-  box-shadow: 0 6px 0 var(--shadow);
+  background: #fff;
+  padding: clamp(1.4rem, 3vw, 2rem);
 }
 .guided-card--hero {
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: 0 12px 0 #c9dce8;
   border: 3px solid var(--navy);
   border-radius: 1.25rem;
-  box-shadow: 0 12px 0 #c9dce8;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 // The three-step strip gives each action equal visual weight and preserves list semantics.
-.guided-process { padding-block: 2.5rem; }
-.guided-process h2 { margin-bottom: 1.25rem; }
+.guided-process {
+  padding-block: 2.5rem;
+}
+.guided-process h2 {
+  margin-bottom: 1.25rem;
+}
 .guided-process__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,153 +135,410 @@ a { text-underline-offset: .2em; }
 .guided-process__list li {
   display: flex;
   align-items: center;
-  gap: .8rem;
-  padding: 1rem;
-  background: var(--blue-pale);
+  gap: 0.8rem;
   border: 2px solid var(--blue-border);
   border-radius: 999px;
+  background: var(--blue-pale);
+  padding: 1rem;
 }
 .guided-process__list span,
 .step-list span {
   display: grid;
   place-items: center;
+  border-radius: 50%;
+  background: var(--navy);
   min-width: 2.25rem;
   height: 2.25rem;
   color: #fff;
-  background: var(--navy);
-  border-radius: 50%;
   font-weight: 850;
 }
 
 // General section and card grids are shared by the homepage and content pages.
-.section { padding-block: clamp(3.5rem, 7vw, 6rem); }
-.section-soft, .section-alt { background: var(--blue-pale); }
-.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-.choice-card { display: flex; flex-direction: column; }
-.choice-card a { margin-top: auto; font-weight: 800; }
-.card-number { color: #5f7382; font-size: .82rem; font-weight: 850; letter-spacing: .12em; }
-.comparison { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.section {
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+}
+.section-soft,
+.section-alt {
+  background: var(--blue-pale);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.choice-card {
+  display: flex;
+  flex-direction: column;
+}
+.choice-card a {
+  margin-top: auto;
+  font-weight: 800;
+}
+.card-number {
+  color: #5f7382;
+  font-weight: 850;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+}
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
 .program-card {
+  border-radius: 1rem;
+  background: var(--navy);
   padding: clamp(1.5rem, 4vw, 2.5rem);
   color: #fff;
-  background: var(--navy);
-  border-radius: 1rem;
 }
-.program-card h3, .program-card a { color: #fff; }
-.program-card a { font-weight: 800; text-decoration-color: var(--gold-soft); }
+.program-card h3,
+.program-card a {
+  color: #fff;
+}
+.program-card a {
+  font-weight: 800;
+  text-decoration-color: var(--gold-soft);
+}
 
 // Interior page headers echo the homepage hero without repeating its large scale.
 .page-header .bg-bordered {
-  padding-block: clamp(3rem, 6vw, 5rem) !important;
-  background: linear-gradient(145deg, var(--blue-soft), var(--blue-pale));
   border-block: 2px solid var(--blue-border) !important;
+  background: linear-gradient(145deg, var(--blue-soft), var(--blue-pale));
+  padding-block: clamp(3rem, 6vw, 5rem) !important;
 }
-.page-header .text-2xl { max-width: 65ch; }
+.page-header .text-2xl {
+  max-width: 65ch;
+}
 
 // Service pages separate the main explanation from the optional call prompt.
 .content-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(17rem, .65fr);
-  gap: clamp(2rem, 6vw, 5rem);
+  grid-template-columns: minmax(0, 1.35fr) minmax(17rem, 0.65fr);
   align-items: start;
+  gap: clamp(2rem, 6vw, 5rem);
 }
 .help-card {
-  padding: clamp(1.5rem, 4vw, 2.25rem);
-  background: #fff;
+  box-shadow: 0 10px 0 var(--shadow);
   border: 3px solid var(--navy);
   border-radius: 1.25rem;
-  box-shadow: 0 10px 0 var(--shadow);
+  background: #fff;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
 }
 .call-link {
   display: inline-block;
-  padding: .9rem 1.1rem;
-  color: #fff !important;
-  background: var(--navy);
   border-radius: 999px;
+  background: var(--navy);
+  padding: 0.9rem 1.1rem;
+  color: #fff !important;
   font-weight: 800;
   text-decoration: none !important;
 }
-.check-list { padding: 0; list-style: none; }
-.check-list li { position: relative; margin-block: .8rem; padding-left: 2rem; }
+.check-list {
+  padding: 0;
+  list-style: none;
+}
+.check-list li {
+  position: relative;
+  margin-block: 0.8rem;
+  padding-left: 2rem;
+}
 .check-list li::before {
-  content: '✓';
   position: absolute;
   left: 0;
+  content: '✓';
   color: #176548;
   font-weight: 900;
 }
-.step-list { padding: 0; list-style: none; }
-.step-list li { display: flex; gap: 1rem; align-items: flex-start; margin-block: 1rem; }
-.step-list p { margin: 0; }
+.step-list {
+  padding: 0;
+  list-style: none;
+}
+.step-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-block: 1rem;
+}
+.step-list p {
+  margin: 0;
+}
+
+// Resource hub: one navigation destination expands into a spacious, scannable card index.
+.resource-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.resource-card {
+  display: flex;
+  flex-direction: column;
+}
+.resource-card a {
+  margin-top: auto;
+  font-weight: 800;
+}
+.resource-card:last-child {
+  grid-column: 2;
+}
+.resource-review-note {
+  border-left: 5px solid var(--gold);
+  background: var(--blue-pale);
+  padding: 1rem 1.25rem;
+  max-width: 70ch;
+}
+
+// Resource articles: a restrained reading column sits beside an optional help card.
+.resource-status {
+  background: var(--navy-dark);
+  color: #fff;
+}
+.resource-status__inner {
+  padding-block: 0.75rem;
+}
+.resource-status p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.resource-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(17rem, 0.55fr);
+  align-items: start;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+.resource-content {
+  max-width: 72ch;
+}
+.related-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+}
+.related-links li {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--blue-border);
+  border-radius: 0.8rem;
+  background: #fff;
+  padding: 1rem 1.25rem;
+  min-height: 5rem;
+}
+.related-links a {
+  font-weight: 800;
+}
+.important-note {
+  border: 2px solid #c4933f;
+  border-radius: 0.8rem;
+  background: #fff8e8;
+  padding: 1.25rem 1.5rem;
+}
+
+// Responsive table: keyboard users can scroll the comparison when space is limited.
+.comparison-table-wrap {
+  border: 2px solid var(--blue-border);
+  border-radius: 0.8rem;
+  overflow-x: auto;
+}
+.comparison-table {
+  border-collapse: collapse;
+  background: #fff;
+  width: 100%;
+  min-width: 34rem;
+}
+.comparison-table th,
+.comparison-table td {
+  vertical-align: top;
+  border-bottom: 1px solid var(--blue-border);
+  padding: 1rem;
+  width: 50%;
+  text-align: left;
+}
+.comparison-table th {
+  background: var(--navy);
+  color: #fff;
+  font-size: 1.15rem;
+}
+.comparison-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+// FAQ and glossary components use native semantics and large, visible targets.
+.faq-list {
+  display: grid;
+  gap: 0.8rem;
+}
+.faq-list details {
+  border: 2px solid var(--blue-border);
+  border-radius: 0.8rem;
+  background: #fff;
+}
+.faq-list summary {
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  color: var(--navy-dark);
+  font-weight: 850;
+}
+.faq-list details p {
+  padding: 0 1.25rem 1.25rem;
+}
+.glossary-list {
+  display: grid;
+  gap: 1rem;
+}
+.glossary-list div {
+  border-left: 5px solid var(--navy);
+  background: var(--blue-pale);
+  padding: 1.1rem 1.25rem;
+}
+.glossary-list dt {
+  color: var(--navy-dark);
+  font-weight: 850;
+  font-size: 1.1rem;
+}
+.glossary-list dd {
+  margin: 0.35rem 0 0;
+}
+
+// Homepage resource preview gives the hub prominence without duplicating its full index.
+.resource-promo {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.85fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+.resource-promo__links {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+.resource-promo__links li {
+  border: 2px solid var(--blue-border);
+  border-radius: 999px;
+  background: #fff;
+  padding: 1rem 1.25rem;
+}
+.resource-promo__links a {
+  font-weight: 800;
+}
 
 // Contact forms are grouped in one large, clearly bounded region.
 .contact-panel {
   display: grid;
-  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(2rem, 5vw, 4rem);
-  padding: clamp(1.5rem, 5vw, 3.5rem);
-  background: var(--blue-soft);
+  box-shadow: 0 8px 0 var(--shadow);
   border: 2px solid var(--blue-border);
   border-radius: 1.25rem;
-  box-shadow: 0 8px 0 var(--shadow);
+  background: var(--blue-soft);
+  padding: clamp(1.5rem, 5vw, 3.5rem);
 }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.field-label { display: flex; flex-direction: column; gap: .35rem; font-weight: 700; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.field-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 700;
+}
 .field-label select {
-  min-height: 3rem;
-  padding: .5rem;
-  color: #1e2930;
-  background: #fff;
   border: 2px solid #687680;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.5rem;
+  min-height: 3rem;
+  color: #1e2930;
   font: inherit;
 }
 .form-note {
-  padding: .8rem 1rem;
-  background: #fff;
   border-left: 5px solid var(--gold);
-  border-radius: 0 .5rem .5rem 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background: #fff;
+  padding: 0.8rem 1rem;
 }
 
 // Attorney placeholders intentionally look unfinished so demo content is not mistaken for final profiles.
-.attorney-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.attorney-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
 .attorney-card {
-  overflow: hidden;
-  background: #fff;
+  box-shadow: 0 5px 0 var(--shadow);
   border: 2px solid var(--blue-border);
   border-radius: 1rem;
-  box-shadow: 0 5px 0 var(--shadow);
+  background: #fff;
+  overflow: hidden;
 }
 .attorney-placeholder {
   display: grid;
   place-items: center;
+  background: var(--blue-soft);
   aspect-ratio: 4 / 3;
   color: var(--muted);
-  background: var(--blue-soft);
   font-weight: 700;
 }
-.attorney-card div:last-child { padding: 1rem; }
+.attorney-card div:last-child {
+  padding: 1rem;
+}
 
 // Footer keeps firm ownership and policy links highly legible.
-footer { color: #fff; background: var(--navy-dark); }
-footer h2, footer a { color: #fff !important; }
-footer section { border-color: rgba(255, 255, 255, .24) !important; }
+footer {
+  background: var(--navy-dark);
+  color: #fff;
+}
+footer h2,
+footer a {
+  color: #fff !important;
+}
+footer section {
+  border-color: rgba(255, 255, 255, 0.24) !important;
+}
 
 // Responsive layouts become single-column before text or controls feel crowded.
 @media (max-width: 900px) {
-  .guided-hero__grid, .content-grid, .contact-panel { grid-template-columns: 1fr; }
-  .card-grid, .attorney-grid { grid-template-columns: repeat(2, 1fr); }
+  .guided-hero__grid,
+  .content-grid,
+  .contact-panel,
+  .resource-layout,
+  .resource-promo {
+    grid-template-columns: 1fr;
+  }
+  .card-grid,
+  .attorney-grid,
+  .resource-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .resource-card:last-child {
+    grid-column: auto;
+  }
 }
 @media (max-width: 640px) {
-  .guided-process__list, .comparison, .card-grid, .attorney-grid, .form-grid { grid-template-columns: 1fr; }
-  .guided-hero { background: var(--blue-soft); }
+  .guided-process__list,
+  .comparison,
+  .card-grid,
+  .attorney-grid,
+  .form-grid,
+  .resource-card-grid,
+  .related-links {
+    grid-template-columns: 1fr;
+  }
+  .guided-hero {
+    background: var(--blue-soft);
+  }
 }
 
 // Visitors who request reduced motion receive no decorative animation or smooth scrolling.
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

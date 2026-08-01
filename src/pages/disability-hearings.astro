@@ -1,0 +1,53 @@
+---
+import ResourcePage from '@components/ResourcePage.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<ResourcePage
+  title="What Happens at a Disability Hearing?"
+  description="Learn what may happen before, during, and after a Social Security disability hearing and how to prepare in plain language."
+  intro="A disability hearing is a chance to speak with an administrative law judge about your claim."
+  related={[
+    { href: '/disability-appeals', label: 'Learn about denied claims and appeals' },
+    { href: '/disability-claim-evidence', label: 'Review evidence and documents' },
+    { href: '/disability-glossary', label: 'Look up hearing terms' },
+  ]}
+>
+  <!-- Hearing timeline: separates preparation from the hearing itself. -->
+  <Heading level="h2">Before the hearing</Heading>
+  <ul class="check-list">
+    <li>Read every notice and write down the hearing date, time, and way you will attend.</li>
+    <li>Tell Social Security about evidence related to your claim.</li>
+    <li>Review your medical care, work history, symptoms, and daily activities.</li>
+    <li>Ask about an accommodation or interpreter as early as possible.</li>
+  </ul>
+
+  <Heading level="h2">During the hearing</Heading>
+  <p>
+    The judge may ask about your medical conditions, past work, treatment, and daily life. Other people, such as a
+    medical or vocational expert, may also speak.
+  </p>
+  <p>
+    Listen to each question. Ask for the question to be repeated when you do not understand it. Give an honest answer in
+    your own words.
+  </p>
+
+  <Heading level="h2">After the hearing</Heading>
+  <p>
+    The judge usually sends a written decision. Read it carefully. If the decision is unfavorable, another appeal
+    deadline may apply.
+  </p>
+
+  <div class="important-note">
+    <Heading level="h2" size="h4">Important timing note</Heading>
+    <p>
+      Social Security says disability-related written evidence generally must be submitted or identified no later than
+      five business days before the hearing. Exceptions may apply. Confirm the current rule for your case.
+    </p>
+  </div>
+  <p>
+    <Link href="https://www.ssa.gov/appeals/hearing_process.html" isExternal
+      >Read Social Security’s hearing-process guidance</Link
+    >.
+  </p>
+</ResourcePage>

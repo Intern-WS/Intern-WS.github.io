@@ -1,0 +1,60 @@
+---
+import ResourcePage from '@components/ResourcePage.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<ResourcePage
+  title="SSI vs. SSDI: What Is the Difference?"
+  description="Compare SSI and SSDI in plain language, including work-history and financial rules, and learn which Social Security disability program may apply."
+  intro="SSI and SSDI are different programs. Some people may apply for one program, and some may apply for both."
+  related={[
+    { href: '/ssi', label: 'Learn more about SSI benefits' },
+    { href: '/ssdi', label: 'Learn more about SSDI benefits' },
+    { href: '/applying-for-disability', label: 'Learn how to start an application' },
+  ]}
+>
+  <!-- Quick comparison: the table keeps the central distinctions side by side. -->
+  <Heading level="h2">A quick comparison</Heading>
+  <div class="comparison-table-wrap" tabindex="0" role="region" aria-label="SSI and SSDI comparison">
+    <table class="comparison-table">
+      <thead><tr><th scope="col">SSDI</th><th scope="col">SSI</th></tr></thead>
+      <tbody>
+        <tr><td>Usually depends on your work history.</td><td>Does not require work history in the same way.</td></tr>
+        <tr
+          ><td>Your past earnings help determine the payment.</td><td
+            >Your income, resources, and living arrangements may affect eligibility and payment.</td
+          ></tr
+        >
+        <tr
+          ><td>Some family members may qualify for related benefits.</td><td
+            >It may be available to adults or children who meet the program rules.</td
+          ></tr
+        >
+        <tr><td>Social Security’s disability rules apply.</td><td>Social Security’s disability rules apply.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <Heading level="h2">What the names mean</Heading>
+  <Heading level="h3">SSDI</Heading>
+  <p>
+    Social Security Disability Insurance is often called SSDI. It is generally for people who have enough recent work
+    covered by Social Security.
+  </p>
+  <Heading level="h3">SSI</Heading>
+  <p>
+    Supplemental Security Income is often called SSI. It is generally for people with limited income and resources who
+    meet age, blindness, or disability rules.
+  </p>
+
+  <Heading level="h2">You may not need to choose by yourself</Heading>
+  <p>
+    Social Security may review whether more than one program applies. The answer can depend on your age, work record,
+    income, resources, living arrangements, and medical condition.
+  </p>
+  <p>
+    <Link href="https://www.ssa.gov/redbook/eng/overview-disability.htm" isExternal
+      >Compare the programs on the Social Security website</Link
+    >.
+  </p>
+</ResourcePage>

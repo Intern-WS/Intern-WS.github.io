@@ -1,0 +1,88 @@
+---
+// The hub keeps seven educational pages behind one clear navigation item.
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import ContactForm from '@components/ContactForm.astro'
+import { Heading, Link } from 'accessible-astro-components'
+
+const resources = [
+  {
+    href: '/ssi-vs-ssdi',
+    title: 'SSI vs. SSDI',
+    question: 'Which disability program might apply to me?',
+  },
+  {
+    href: '/applying-for-disability',
+    title: 'Applying for Benefits',
+    question: 'How do I start an application?',
+  },
+  {
+    href: '/disability-hearings',
+    title: 'Disability Hearings',
+    question: 'What may happen at my hearing?',
+  },
+  {
+    href: '/disability-claim-evidence',
+    title: 'Evidence and Documents',
+    question: 'What information may help my claim?',
+  },
+  {
+    href: '/disability-lawyer-fees',
+    title: 'Attorney Fees',
+    question: 'How much might legal help cost?',
+  },
+  {
+    href: '/frequently-asked-questions',
+    title: 'Frequently Asked Questions',
+    question: 'Can I find a quick answer to a common question?',
+  },
+  {
+    href: '/disability-glossary',
+    title: 'Disability Terms',
+    question: 'What do these unfamiliar terms mean?',
+  },
+]
+---
+
+<DefaultLayout
+  title="Social Security Disability Resources"
+  description="Plain-language guides about SSI, SSDI, disability applications, hearings, evidence, attorney fees, and common Social Security terms."
+>
+  <!-- Hub introduction: explains what visitors will find and how to use the page. -->
+  <PageHeader
+    title="Disability Resources"
+    subtitle="Choose one question. Each guide uses short explanations and clear next steps."
+    bgType="bordered"
+  />
+
+  <!-- Resource cards: one descriptive link per topic creates a clear, uncluttered index. -->
+  <section class="section">
+    <div class="space-content container">
+      <p class="eyebrow">Plain-language guides</p>
+      <Heading level="h2">What would you like to understand?</Heading>
+      <div class="resource-card-grid">
+        {
+          resources.map((resource, index) => (
+            <article class="guided-card resource-card space-content">
+              <span class="card-number" aria-hidden="true">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <Heading level="h3" size="h4">
+                {resource.title}
+              </Heading>
+              <p>{resource.question}</p>
+              <Link href={resource.href}>Read {resource.title}</Link>
+            </article>
+          ))
+        }
+      </div>
+      <p class="resource-review-note">
+        These pages provide general information. They are rough drafts and must be reviewed by a Williams &amp; Swee,
+        Ltd. attorney before publication.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact form: help remains available without adding more main-menu choices. -->
+  <div class="section container"><ContactForm compact /></div>
+</DefaultLayout>

@@ -12,11 +12,13 @@ import { Heading, Link } from 'accessible-astro-components'
 >
   <!-- Hero: immediately identifies the service, firm, and two clearest actions. -->
   <section class="guided-hero">
-    <div class="container guided-hero__grid">
+    <div class="guided-hero__grid container">
       <div class="space-content">
         <p class="eyebrow">Social Security disability help in Illinois</p>
         <Heading level="h1">Clear help with SSI and SSDI</Heading>
-        <p class="hero-lede">Williams &amp; Swee, Ltd. helps people apply for disability benefits and appeal denied claims.</p>
+        <p class="hero-lede">
+          Williams &amp; Swee, Ltd. helps people apply for disability benefits and appeal denied claims.
+        </p>
         <div class="button-row">
           <Link href="tel:+10000000000" isButton type="primary">Call Williams &amp; Swee</Link>
           <Link href="/disability-appeals" isButton type="secondary">My claim was denied</Link>
@@ -48,7 +50,7 @@ import { Heading, Link } from 'accessible-astro-components'
 
   <!-- Help choices: visitors can choose by situation instead of legal vocabulary. -->
   <section class="section section-soft" aria-labelledby="help-heading">
-    <div class="container space-content">
+    <div class="space-content container">
       <p class="eyebrow">Choose what sounds like you</p>
       <Heading level="h2" id="help-heading">How can we help?</Heading>
       <div class="card-grid">
@@ -56,7 +58,7 @@ import { Heading, Link } from 'accessible-astro-components'
           <span class="card-number" aria-hidden="true">01</span>
           <Heading level="h3" size="h4">I need to apply</Heading>
           <p>Learn about SSI and SSDI and what information may help your application.</p>
-          <Link href="/how-we-help">Help with an application</Link>
+          <Link href="/applying-for-disability">How to start an application</Link>
         </article>
         <article class="guided-card choice-card space-content">
           <span class="card-number" aria-hidden="true">02</span>
@@ -68,7 +70,7 @@ import { Heading, Link } from 'accessible-astro-components'
           <span class="card-number" aria-hidden="true">03</span>
           <Heading level="h3" size="h4">I have a hearing</Heading>
           <p>Learn how an attorney may help you prepare for a disability hearing.</p>
-          <Link href="/how-we-help">Help before a hearing</Link>
+          <Link href="/disability-hearings">What happens at a hearing</Link>
         </article>
       </div>
     </div>
@@ -76,7 +78,7 @@ import { Heading, Link } from 'accessible-astro-components'
 
   <!-- Program comparison: explains the main distinction without overwhelming detail. -->
   <section class="section" aria-labelledby="compare-heading">
-    <div class="container space-content">
+    <div class="space-content container">
       <p class="eyebrow">Two disability programs</p>
       <Heading level="h2" id="compare-heading">SSI and SSDI are different</Heading>
       <div class="comparison">
@@ -91,10 +93,32 @@ import { Heading, Link } from 'accessible-astro-components'
           <Link href="/ssi">Learn about SSI</Link>
         </article>
       </div>
-      <p><strong>Both programs use Social Security’s disability rules.</strong> The rules can be complicated. We can help you understand which program may apply.</p>
+      <p>
+        <strong>Both programs use Social Security’s disability rules.</strong> The rules can be complicated. We can help you
+        understand which program may apply.
+      </p>
+    </div>
+  </section>
+
+  <!-- Resources preview: introduces the hub without adding all seven guides to the menu. -->
+  <section class="section section-soft" aria-labelledby="resources-heading">
+    <div class="resource-promo container">
+      <div class="space-content">
+        <p class="eyebrow">Learn one topic at a time</p>
+        <Heading level="h2" id="resources-heading">Clear answers to common questions</Heading>
+        <p>
+          Read plain-language guides about applying, hearings, evidence, fees, and unfamiliar Social Security terms.
+        </p>
+        <Link href="/resources" isButton type="secondary">Browse disability resources</Link>
+      </div>
+      <ul class="resource-promo__links" aria-label="Popular resources">
+        <li><Link href="/ssi-vs-ssdi">Compare SSI and SSDI</Link></li>
+        <li><Link href="/disability-claim-evidence">Evidence that may help a claim</Link></li>
+        <li><Link href="/frequently-asked-questions">Frequently asked questions</Link></li>
+      </ul>
     </div>
   </section>
 
   <!-- Contact: repeated here so help is available without another navigation step. -->
-  <div class="container section"><ContactForm /></div>
+  <div class="section container"><ContactForm /></div>
 </DefaultLayout>

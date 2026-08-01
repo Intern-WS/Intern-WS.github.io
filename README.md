@@ -22,10 +22,10 @@ npm run dev
 
 ## Available commands
 
-| Command | Action |
-| :------ | :----- |
-| `npm run dev` | Start the local dev server |
-| `npm run build` | Build the production site |
+| Command           | Action                               |
+| :---------------- | :----------------------------------- |
+| `npm run dev`     | Start the local dev server           |
+| `npm run build`   | Build the production site            |
 | `npm run preview` | Preview the production build locally |
 
 ## Design
@@ -37,3 +37,11 @@ structure and styling decisions.
 
 The earlier comparison routes have been removed. The guided homepage is now the
 public, indexable page at `/`.
+
+## Resources
+
+The main navigation contains one `Resources` link so the header stays simple.
+That hub links to seven plain-language draft guides about SSI and SSDI,
+applications, hearings, evidence, attorney fees, common questions, and terms.
+Each guide includes unique metadata, an attorney-review notice, official SSA
+references, related internal links, and a compact contact form.

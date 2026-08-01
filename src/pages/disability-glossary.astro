@@ -1,0 +1,69 @@
+---
+import ResourcePage from '@components/ResourcePage.astro'
+import { Heading, Link } from 'accessible-astro-components'
+
+const terms = [
+  ['Administrative law judge (ALJ)', 'The judge who may hold a Social Security hearing and decide an appeal.'],
+  ['Appeal', 'A request asking Social Security to review a decision.'],
+  ['Claimant', 'The person applying for or receiving benefits.'],
+  [
+    'Disability',
+    'A Social Security term with specific medical and work-related rules. It may not mean the same thing in another program.',
+  ],
+  ['Evidence', 'Information used to decide a claim, such as medical records, work information, forms, and testimony.'],
+  ['Hearing', 'A stage of an appeal where a judge reviews the case and may ask questions.'],
+  ['Medical source', 'A health professional or organization that provides medical information.'],
+  ['Notice', 'An official letter from Social Security about a claim, benefit, decision, or required action.'],
+  [
+    'Onset date',
+    'The date a person says a disability began. Social Security decides the established onset date under its rules.',
+  ],
+  ['Past-due benefits', 'Benefits owed for an earlier period after a favorable decision.'],
+  [
+    'Reconsideration',
+    'Usually the first level of appeal after an initial decision. A new reviewer examines the claim.',
+  ],
+  ['Representative', 'A qualified person, such as an attorney, appointed to help with a Social Security matter.'],
+  [
+    'Social Security Disability Insurance (SSDI)',
+    'A disability program generally connected to a person’s covered work history.',
+  ],
+  [
+    'Supplemental Security Income (SSI)',
+    'A program generally for people with limited income and resources who meet age, blindness, or disability rules.',
+  ],
+  [
+    'Substantial gainful activity (SGA)',
+    'A Social Security term for a level of work activity and earnings used in disability decisions. The amount can change.',
+  ],
+]
+---
+
+<ResourcePage
+  title="Plain-Language Social Security Disability Glossary"
+  description="Understand common SSI, SSDI, appeal, hearing, evidence, and disability-claim terms in a plain-language glossary."
+  intro="Legal and Social Security words can be unfamiliar. Use this page for a short, general meaning."
+  related={[
+    { href: '/frequently-asked-questions', label: 'Read common questions' },
+    { href: '/ssi-vs-ssdi', label: 'Compare SSI and SSDI' },
+    { href: '/disability-hearings', label: 'Learn about hearings' },
+  ]}
+>
+  <!-- Glossary: a description list keeps each term connected to its meaning. -->
+  <Heading level="h2">Terms from A to Z</Heading>
+  <dl class="glossary-list">
+    {
+      terms.map(([term, definition]) => (
+        <div>
+          <dt>{term}</dt>
+          <dd>{definition}</dd>
+        </div>
+      ))
+    }
+  </dl>
+  <p>
+    These short meanings do not replace the full rules. <Link href="https://www.ssa.gov/agency/glossary/" isExternal
+      >See Social Security’s official glossary</Link
+    >.
+  </p>
+</ResourcePage>

@@ -1,0 +1,77 @@
+---
+// This shared wrapper gives every resource the same breadcrumbs, review note,
+// readable content width, related-resource area, and contact option.
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import ContactForm from '@components/ContactForm.astro'
+import { Heading, Link } from 'accessible-astro-components'
+
+interface RelatedLink {
+  href: string
+  label: string
+}
+
+interface Props {
+  title: string
+  description: string
+  intro: string
+  related?: RelatedLink[]
+}
+
+const { title, description, intro, related = [] } = Astro.props
+---
+
+<DefaultLayout title={title} description={description} type="article">
+  <!-- Page orientation: the summary answers the visitor's main question immediately. -->
+  <PageHeader title={title} subtitle={intro} bgType="bordered" />
+
+  <!-- Draft notice: legal-information pages need named attorney review before launch. -->
+  <section class="resource-status" aria-label="Page review status">
+    <div class="resource-status__inner container">
+      <p><strong>General information</strong> · Rough draft for attorney review · Last reviewed July 2026</p>
+    </div>
+  </section>
+
+  <!-- Main article: the slot lets each topic use the clearest structure for its content. -->
+  <article class="section">
+    <div class="resource-layout container">
+      <div class="resource-content space-content">
+        <slot />
+      </div>
+
+      <!-- Help card: stays secondary to the educational content. -->
+      <aside class="help-card space-content" aria-labelledby="resource-help-title">
+        <Heading level="h2" size="h4" id="resource-help-title">Need help with your situation?</Heading>
+        <p>Rules and deadlines can depend on your facts.</p>
+        <a class="call-link" href="tel:+10000000000">Call (000) 000-0000</a>
+        <p class="small">Placeholder phone number for this demo.</p>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Related links: three or fewer choices keep the next step easy to scan. -->
+  {
+    related.length > 0 && (
+      <section class="section section-soft" aria-labelledby="related-resources-title">
+        <div class="space-content container">
+          <Heading level="h2" id="related-resources-title">
+            Related resources
+          </Heading>
+          <ul class="related-links">
+            {related.map((item) => (
+              <li>
+                <Link href={item.href}>{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+          <p>
+            <Link href="/resources">See all disability resources</Link>
+          </p>
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Contact form: visitors can ask for a call without leaving the page. -->
+  <div class="section container"><ContactForm compact /></div>
+</DefaultLayout>

@@ -1,0 +1,58 @@
+---
+import ResourcePage from '@components/ResourcePage.astro'
+import { Heading, Link } from 'accessible-astro-components'
+---
+
+<ResourcePage
+  title="How to Apply for Disability Benefits"
+  description="Learn the basic steps for starting an SSI or SSDI application and what information Social Security may ask you to provide."
+  intro="You can begin by learning which program may apply, gathering basic information, and starting an application with Social Security."
+  related={[
+    { href: '/ssi-vs-ssdi', label: 'Compare SSI and SSDI' },
+    { href: '/disability-claim-evidence', label: 'Review evidence and documents' },
+    { href: '/frequently-asked-questions', label: 'Read common questions' },
+  ]}
+>
+  <!-- Application steps: short verbs make the process easier to follow. -->
+  <Heading level="h2">Four basic steps</Heading>
+  <ol class="step-list">
+    <li>
+      <span>1</span><p>
+        <strong>Choose a way to apply.</strong> Depending on the program, you may apply online, by telephone, or with help
+        from a Social Security office.
+      </p>
+    </li>
+    <li>
+      <span>2</span><p>
+        <strong>Gather what you know.</strong> Make a list of medical providers, medicines, jobs, education, and important
+        dates.
+      </p>
+    </li>
+    <li>
+      <span>3</span><p>
+        <strong>Answer as completely as you can.</strong> Explain how your conditions affect daily activities and your ability
+        to work.
+      </p>
+    </li>
+    <li>
+      <span>4</span><p>
+        <strong>Keep copies.</strong> Save your application confirmation, forms, and every notice you receive.
+      </p>
+    </li>
+  </ol>
+
+  <Heading level="h2">Do not wait for every record</Heading>
+  <p>
+    You may not have every date or document. Social Security’s starter materials say to keep an appointment even when
+    information is missing. Ask what you can provide later.
+  </p>
+
+  <Heading level="h2">Official application tools</Heading>
+  <ul>
+    <li><Link href="https://www.ssa.gov/apply" isExternal>Start with Social Security’s application page</Link></li>
+    <li>
+      <Link href="https://www.ssa.gov/disability/disability_starter_kits.htm" isExternal
+        >Use a Social Security Disability Starter Kit</Link>
+    </li>
+  </ul>
+</ResourcePage>
